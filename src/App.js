@@ -1,6 +1,6 @@
 import React from 'react';
 import {Global, css} from '@emotion/core'
-import { Form } from './lib'
+import { LeadForm } from './lib'
 
 const globalStyles = css`
   body {
@@ -11,12 +11,12 @@ const globalStyles = css`
   }
 `
 
-// App form
+// App LeadForm
 const App = ({className}) => {
   return (
     <div>
       <Global styles={globalStyles} />
-      <Form/>
+      <LeadForm/>
     </div>
   )
 }

@@ -25,13 +25,16 @@
     "@emotion/styled": "^10.0.12"
   },
   "devDependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1",
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-syntax-export-default-from": "^7.2.0",
+    "@babel/preset-react": "^7.0.0",
     "@emotion/core": "^10.0.10",
-    "@emotion/styled": "^10.0.12"
+    "@emotion/styled": "^10.0.12",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.1"
   },
   "browserslist": {
     "production": [
@@ -44,5 +47,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "dependencies": {
+    "@loadable/component": "^5.10.1",
+    "react-router-dom": "^5.0.1"
   }
 }
