@@ -1,6 +1,6 @@
 import React from 'react';
-import { Input } from 'components/Input';
-import { Select } from 'components/Select';
+import { Input } from '../../components/Input';
+import { Select } from '../../components/Select';
 import { withRouter } from "react-router-dom";
 var YEARS = [{
   value: '',

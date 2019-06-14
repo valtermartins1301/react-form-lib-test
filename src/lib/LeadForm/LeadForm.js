@@ -1,16 +1,16 @@
 import React from 'react'
 import { MemoryRouter as Router } from "react-router"
 import { Route } from "react-router-dom"
-import { Form } from "components/Form"
+import { Form } from "../components/Form"
 import loadable from '@loadable/component'
 
 const Loading = () => <p>Loading...</p>
 
-const LoadableContact = loadable(() => import('pages/ContactInformation'), {
+const LoadableContact = loadable(() => import('../pages/ContactInformation'), {
   fallback: Loading,
 })
 
-const LoadableVehicle = loadable(() => import('pages/VehicleInformation'), {
+const LoadableVehicle = loadable(() => import('../pages/VehicleInformation'), {
   fallback: Loading,
 })
 

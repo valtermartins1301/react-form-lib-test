@@ -23,32 +23,22 @@
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.12"
   },
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "@emotion/core": "^10.0.10",
+    "@emotion/styled": "^10.0.12",
+    "@loadable/component": "^5.10.1"
+  },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.0",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/plugin-syntax-export-default-from": "^7.2.0",
     "@babel/preset-react": "^7.0.0",
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.12",
-    "babel-plugin-macros": "^2.6.1",
-    "babel-plugin-module-resolver": "^3.2.0",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "dependencies": {
+    "react-dom": "^16.8.6",
     "@babel/core": "7.4.3",
     "@loadable/component": "^5.10.1",
     "@svgr/webpack": "4.1.0",
@@ -103,6 +93,18 @@
     "webpack-dev-server": "3.2.1",
     "webpack-manifest-plugin": "2.0.4",
     "workbox-webpack-plugin": "4.2.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "jest": {
     "collectCoverageFrom": [

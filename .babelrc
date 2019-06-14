@@ -4,12 +4,6 @@
     ["react-app", { "absoluteRuntime": false }]
   ],
   "plugins": [
-    "@babel/plugin-syntax-dynamic-import",
-    [
-      "module-resolver", 
-      { 
-        "root": ["./src"]
-      }
-    ]
+    "@babel/plugin-syntax-dynamic-import"
   ]
 }

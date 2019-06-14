@@ -1,2 +1,2 @@
-import { VehicleInformation } from "./VehicleInformation";
+import { VehicleInformation } from './VehicleInformation';
 export default VehicleInformation;
