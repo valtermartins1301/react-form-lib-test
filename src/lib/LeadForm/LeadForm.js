@@ -3,12 +3,9 @@ import { MemoryRouter as Router } from "react-router"
 import { Route } from "react-router-dom"
 import { Form } from "../components/Form"
 import loadable from '@loadable/component'
-
+import {ContactInformation} from '../pages/ContactInformation'
 const Loading = () => <p>Loading...</p>
 
-const LoadableContact = loadable(() => import('../pages/ContactInformation'), {
-  fallback: Loading,
-})
 
 const LoadableVehicle = loadable(() => import('../pages/VehicleInformation'), {
   fallback: Loading,
@@ -17,7 +14,7 @@ const LoadableVehicle = loadable(() => import('../pages/VehicleInformation'), {
 const ContactForm = (props) => {
   return (
     <Form {...props}>
-      <LoadableContact/>
+      <ContactInformation/>
     </Form>
   )
 }

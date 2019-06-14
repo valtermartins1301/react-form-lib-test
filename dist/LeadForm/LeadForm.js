@@ -3,16 +3,12 @@ import { MemoryRouter as Router } from "react-router";
 import { Route } from "react-router-dom";
 import { Form } from "../components/Form";
 import loadable from '@loadable/component';
+import { ContactInformation } from '../pages/ContactInformation';
 
 var Loading = function Loading() {
   return React.createElement("p", null, "Loading...");
 };
 
-var LoadableContact = loadable(function () {
-  return import('../pages/ContactInformation');
-}, {
-  fallback: Loading
-});
 var LoadableVehicle = loadable(function () {
   return import('../pages/VehicleInformation');
 }, {
@@ -20,7 +16,7 @@ var LoadableVehicle = loadable(function () {
 });
 
 var ContactForm = function ContactForm(props) {
-  return React.createElement(Form, props, React.createElement(LoadableContact, null));
+  return React.createElement(Form, props, React.createElement(ContactInformation, null));
 };
 
 var VehicleForm = function VehicleForm(props) {
