@@ -1,7 +1,7 @@
-import React from 'react';
-import { MemoryRouter as Router } from "react-router";
-import { Route } from "react-router-dom";
-import { Form } from "../../components/Form";
+import React from 'react'
+import { MemoryRouter as Router } from "react-router"
+import { Route } from "react-router-dom"
+import { Form } from "components/Form"
 import loadable from '@loadable/component'
 
 const Loading = () => <p>Loading...</p>

@@ -3,5 +3,13 @@
     "@babel/preset-react",
     ["react-app", { "absoluteRuntime": false }]
   ],
-  "plugins": ["@babel/plugin-syntax-dynamic-import"]
+  "plugins": [
+    "@babel/plugin-syntax-dynamic-import",
+    [
+      "module-resolver", 
+      { 
+        "root": ["./src"]
+      }
+    ]
+  ]
 }
