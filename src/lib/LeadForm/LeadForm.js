@@ -3,7 +3,7 @@ import { MemoryRouter as Router } from "react-router"
 import { Route } from "react-router-dom"
 import { Form } from "../components/Form"
 import loadable from '@loadable/component'
-import {ContactInformation} from '../pages/ContactInformation'
+import ContactInformation from '../pages/ContactInformation'
 const Loading = () => <p>Loading...</p>
 
 
@@ -29,7 +29,7 @@ const VehicleForm = (props) => {
 
 const LeadForm = ({step, beforeSubmit, afterSubmit}) => {
   return (
-    <Router>
+    <Router initialEntries={["/", "/vehicle"]} initialIndex={0}>
       <Route path="/" exact component={ContactForm} />
       <Route path="/vehicle" component={VehicleForm} />
     </Router>

@@ -27,7 +27,10 @@ var LeadForm = function LeadForm(_ref) {
   var step = _ref.step,
       beforeSubmit = _ref.beforeSubmit,
       afterSubmit = _ref.afterSubmit;
-  return React.createElement(Router, null, React.createElement(Route, {
+  return React.createElement(Router, {
+    initialEntries: ["/", "/vehicle"],
+    initialIndex: 0
+  }, React.createElement(Route, {
     path: "/",
     exact: true,
     component: ContactForm
