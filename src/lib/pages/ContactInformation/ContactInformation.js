@@ -36,7 +36,7 @@ const ContactInformation = withRouter(({history, className}) => {
   return (
     <div>
       <section className={className}>
-        <h2>Nos conte sobre você!</h2>
+        <h2>Nos conte sobre você!!!</h2>
         <Input label="Nome" type="text" name="username"/>
         <Input label="E-mail" type="email" name="usermail"/>
         <Input label="De quanto você precisa?" type="tel" name="amount"/>

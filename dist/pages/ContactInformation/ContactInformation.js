@@ -29,7 +29,7 @@ var ContactInformation = withRouter(function (_ref) {
       className = _ref.className;
   return React.createElement("div", null, React.createElement("section", {
     className: className
-  }, React.createElement("h2", null, "Nos conte sobre voc\xEA!"), React.createElement(Input, {
+  }, React.createElement("h2", null, "Nos conte sobre voc\xEA!!!"), React.createElement(Input, {
     label: "Nome",
     type: "text",
     name: "username"
