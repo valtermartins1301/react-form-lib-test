@@ -6,10 +6,11 @@ import loadable from '@loadable/component'
 
 const Loading = () => <p>Loading...</p>
 
-const LoadableContact = loadable(() => import('./ContactInformation'), {
+const LoadableContact = loadable(() => import('pages/ContactInformation'), {
   fallback: Loading,
 })
-const LoadableVehicle = loadable(() => import('./VehicleInformation'), {
+
+const LoadableVehicle = loadable(() => import('pages/VehicleInformation'), {
   fallback: Loading,
 })
 
