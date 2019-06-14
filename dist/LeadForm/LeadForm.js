@@ -1,7 +1,7 @@
 import React from 'react';
 import { MemoryRouter as Router } from "react-router";
 import { Route } from "react-router-dom";
-import { Form } from "components/Form";
+import { Form } from "../../components/Form";
 import loadable from '@loadable/component';
 
 var Loading = function Loading() {
@@ -9,12 +9,12 @@ var Loading = function Loading() {
 };
 
 var LoadableContact = loadable(function () {
-  return import("./ContactInformation");
+  return import("../../pages/ContactInformation");
 }, {
   fallback: Loading
 });
 var LoadableVehicle = loadable(function () {
-  return import("./VehicleInformation");
+  return import("../../pages/VehicleInformation");
 }, {
   fallback: Loading
 });
