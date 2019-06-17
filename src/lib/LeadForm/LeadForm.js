@@ -1,40 +1,30 @@
 import React from 'react'
-import { MemoryRouter as Router } from "react-router"
-import { Route } from "react-router-dom"
-import { Form } from "../components/Form"
+import {
+  createMemorySource,
+  createHistory,
+  LocationProvider,
+  Router,
+} from "@reach/router"
 import loadable from '@loadable/component'
+import LoadableContact from '../pages/ContactInformation'
+
+const source = createMemorySource("/")
+const history = createHistory(source)
+
 const Loading = () => <p>Loading...</p>
 
 const LoadableVehicle = loadable(() => import('../pages/VehicleInformation'), {
-  fallback: Loading,
+  fallback: <Loading/>,
 })
 
-const LoadableContact = loadable(() => import('../pages/ContactInformation'), {
-  fallback: Loading,
-})
-
-const ContactForm = (props) => {
+const LeadForm = (props) => {
   return (
-    <Form {...props}>
-      <LoadableContact/>
-    </Form>
-  )
-}
-
-const VehicleForm = (props) => {
-  return (
-    <Form {...props}>
-      <LoadableVehicle/>
-    </Form>
-  )
-}
-
-const LeadForm = ({step, beforeSubmit, afterSubmit}) => {
-  return (
-    <Router initialEntries={["/", "/vehicle"]} initialIndex={0}>
-      <Route path="/" exact component={ContactForm} />
-      <Route path="/vehicle" component={VehicleForm} />
-    </Router>
+    <LocationProvider history={history}>
+      <Router>
+        <LoadableContact path="/" {...props}/>
+        <LoadableVehicle path="/vehicle" {...props}/>
+      </Router>
+    </LocationProvider>
   )
 }
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Input } from '../../components/Input';
 import { Select } from '../../components/Select';
-import { withRouter } from "react-router-dom"
 
 const LEAD_PURPOSE = [{
   value: '',
@@ -32,7 +31,7 @@ const LEAD_PURPOSE = [{
   text: 'Outros'
 }]
 
-const ContactInformation = withRouter(({history, className}) => {
+const ContactInformation = ({history, className}) => {
   return (
     <div>
       <section className={className}>
@@ -42,9 +41,9 @@ const ContactInformation = withRouter(({history, className}) => {
         <Input label="De quanto você precisa?" type="tel" name="amount"/>
         <Select label="Como esse empréstimo vai te ajudar?" name="purpose" options={LEAD_PURPOSE}/>
       </section>
-      <input type="submit" value="Prosseguir" onClick={() => history.push("/vehicle")}/>
+      <input type="submit" value="Prosseguir"/>
     </div>
   )
-})
+}
 
-export { ContactInformation }
+export { ContactInformation };

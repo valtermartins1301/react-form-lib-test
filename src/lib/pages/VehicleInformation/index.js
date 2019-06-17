@@ -1,3 +1,14 @@
+import React from 'react'
+import { Form } from "../../components/Form"
+
 import {VehicleInformation} from './VehicleInformation'
 
-export default VehicleInformation
+const VehicleForm = (props) => {
+    return (
+      <Form {...props}>
+        <VehicleInformation/>
+      </Form>
+    )
+  }
+
+export default VehicleForm

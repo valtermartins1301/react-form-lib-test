@@ -1,7 +1,6 @@
 import React from 'react';
 import { Input } from '../../components/Input';
 import { Select } from '../../components/Select';
-import { withRouter } from "react-router-dom";
 var LEAD_PURPOSE = [{
   value: '',
   text: 'Selecione um item'
@@ -24,7 +23,8 @@ var LEAD_PURPOSE = [{
   value: 'others',
   text: 'Outros'
 }];
-var ContactInformation = withRouter(function (_ref) {
+
+var ContactInformation = function ContactInformation(_ref) {
   var history = _ref.history,
       className = _ref.className;
   return React.createElement("div", null, React.createElement("section", {
@@ -47,10 +47,8 @@ var ContactInformation = withRouter(function (_ref) {
     options: LEAD_PURPOSE
   })), React.createElement("input", {
     type: "submit",
-    value: "Prosseguir",
-    onClick: function onClick() {
-      return history.push("/vehicle");
-    }
+    value: "Prosseguir"
   }));
-});
+};
+
 export { ContactInformation };

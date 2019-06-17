@@ -1,8 +1,9 @@
 import React from 'react';
-import { MemoryRouter as Router } from "react-router";
-import { Route } from "react-router-dom";
-import { Form } from "../components/Form";
+import { createMemorySource, createHistory, LocationProvider, Router } from "@reach/router";
 import loadable from '@loadable/component';
+import LoadableContact from '../pages/ContactInformation';
+var source = createMemorySource("/");
+var history = createHistory(source);
 
 var Loading = function Loading() {
   return React.createElement("p", null, "Loading...");
@@ -11,37 +12,17 @@ var Loading = function Loading() {
 var LoadableVehicle = loadable(function () {
   return import('../pages/VehicleInformation');
 }, {
-  fallback: Loading
-});
-var LoadableContact = loadable(function () {
-  return import('../pages/ContactInformation');
-}, {
-  fallback: Loading
+  fallback: React.createElement(Loading, null)
 });
 
-var ContactForm = function ContactForm(props) {
-  return React.createElement(Form, props, React.createElement(LoadableContact, null));
-};
-
-var VehicleForm = function VehicleForm(props) {
-  return React.createElement(Form, props, React.createElement(LoadableVehicle, null));
-};
-
-var LeadForm = function LeadForm(_ref) {
-  var step = _ref.step,
-      beforeSubmit = _ref.beforeSubmit,
-      afterSubmit = _ref.afterSubmit;
-  return React.createElement(Router, {
-    initialEntries: ["/", "/vehicle"],
-    initialIndex: 0
-  }, React.createElement(Route, {
-    path: "/",
-    exact: true,
-    component: ContactForm
-  }), React.createElement(Route, {
-    path: "/vehicle",
-    component: VehicleForm
-  }));
+var LeadForm = function LeadForm(props) {
+  return React.createElement(LocationProvider, {
+    history: history
+  }, React.createElement(Router, null, React.createElement(LoadableContact, Object.assign({
+    path: "/"
+  }, props)), React.createElement(LoadableVehicle, Object.assign({
+    path: "/vehicle"
+  }, props))));
 };
 
 export { LeadForm };

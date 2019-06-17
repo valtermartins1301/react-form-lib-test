@@ -1,7 +1,6 @@
 import React from 'react';
 import { Input } from '../../components/Input';
 import { Select } from '../../components/Select';
-import { withRouter } from "react-router-dom";
 var YEARS = [{
   value: '',
   text: 'Selecione um item'
@@ -15,7 +14,8 @@ var YEARS = [{
   value: '2017',
   text: '2017'
 }];
-var VehicleInformation = withRouter(function (_ref) {
+
+var VehicleInformation = function VehicleInformation(_ref) {
   var history = _ref.history,
       className = _ref.className;
   return React.createElement("div", null, React.createElement("section", {
@@ -34,10 +34,8 @@ var VehicleInformation = withRouter(function (_ref) {
     options: YEARS
   })), React.createElement("input", {
     type: "submit",
-    value: "Prosseguir",
-    onClick: function onClick() {
-      return history.push("/");
-    }
+    value: "Finalizar"
   }));
-});
+};
+
 export { VehicleInformation };

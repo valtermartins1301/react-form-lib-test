@@ -1,7 +1,6 @@
 import React from 'react';
 import { Input } from '../../components/Input';
 import { Select } from '../../components/Select';
-import { withRouter } from "react-router-dom"
 
 const YEARS = [{
   value: '',
@@ -20,7 +19,7 @@ const YEARS = [{
   text: '2017'
 }]
 
-const VehicleInformation = withRouter(({history, className}) => {
+const VehicleInformation = ({history, className}) => {
   return (
     <div>
       <section className={className}>
@@ -29,9 +28,9 @@ const VehicleInformation = withRouter(({history, className}) => {
         <Select label="Qual é o ano fabricação?" name="manufacturing-year" options={YEARS}/>
         <Select label="Qual é o ano modelo?" name="auto-year" options={YEARS}/>
       </section>
-      <input type="submit" value="Prosseguir" onClick={() => history.push("/")}/>
+      <input type="submit" value="Finalizar"/>
     </div>
   )
-})
+}
 
 export { VehicleInformation };

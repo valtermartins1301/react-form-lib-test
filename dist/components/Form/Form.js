@@ -29,7 +29,6 @@ function _templateObject() {
 
 import React, { Component } from "react";
 import styled from '@emotion/styled';
-import { Redirect } from 'react-router';
 import { css } from '@emotion/core';
 
 var mapFormValues = function mapFormValues(elements) {
@@ -63,13 +62,13 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(FormRaw)).call.apply(_getPrototypeOf2, [this].concat(args)));
     _this.state = {
-      submited: false,
       beforeSubmit: _this.props.beforeSubmit || function () {
         return Promise.resolve();
       },
       afterSubmit: _this.props.afterSubmit || function () {
         return Promise.resolve();
-      }
+      },
+      nextStep: _this.props.nextStep || ""
     };
 
     _this.handleSubmit =
@@ -78,7 +77,7 @@ function (_Component) {
       var _ref = _asyncToGenerator(
       /*#__PURE__*/
       _regeneratorRuntime.mark(function _callee(event) {
-        var _this$state, beforeSubmit, afterSubmit, mappedValues;
+        var _this$state, beforeSubmit, afterSubmit, nextStep, mappedValues;
 
         return _regeneratorRuntime.wrap(function _callee$(_context) {
           while (1) {
@@ -86,7 +85,7 @@ function (_Component) {
               case 0:
                 event.persist();
                 event.preventDefault();
-                _this$state = _this.state, beforeSubmit = _this$state.beforeSubmit, afterSubmit = _this$state.afterSubmit;
+                _this$state = _this.state, beforeSubmit = _this$state.beforeSubmit, afterSubmit = _this$state.afterSubmit, nextStep = _this$state.nextStep;
                 mappedValues = mapFormValues(event.target.elements);
                 _context.next = 6;
                 return beforeSubmit(event, mappedValues);
@@ -97,9 +96,7 @@ function (_Component) {
                 return afterSubmit();
 
               case 9:
-                _this.setState({
-                  submited: true
-                });
+                _this.props.navigate("/".concat(nextStep));
 
               case 10:
               case "end":
@@ -120,18 +117,7 @@ function (_Component) {
   _createClass(FormRaw, [{
     key: "render",
     value: function render() {
-      var submited = this.state.submited;
-
-      var _ref2 = this.props.location.state || {
-        from: {
-          pathname: "/"
-        }
-      },
-          from = _ref2.from;
-
-      return submited ? React.createElement(Redirect, {
-        to: from
-      }) : React.createElement("form", {
+      return React.createElement("form", {
         "data-netlify": "true",
         className: this.props.className,
         onChange: this.handleChange,

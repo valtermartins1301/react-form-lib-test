@@ -22,15 +22,18 @@
     "react-dom": "^16.8.6",
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.12",
-    "react-router-dom": "^5.0.1"
+    "react-router-dom": "^5.0.1",
+    "@reach/router": "^1.2.1",
+    "@loadable/component": "^5.10.1"
   },
   "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.1",
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.12",
-    "@loadable/component": "^5.10.1"
+    "@loadable/component": "^5.10.1",
+    "@reach/router": "^1.2.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",

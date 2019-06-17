@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import styled from '@emotion/styled'
-import { Redirect } from 'react-router'
 import {css} from '@emotion/core'
 
 const mapFormValues = (elements) => {
@@ -17,15 +16,15 @@ const mapFormValues = (elements) => {
 
 class FormRaw extends Component {
   state = {
-    submited: false,
     beforeSubmit: this.props.beforeSubmit || (() => Promise.resolve()),
     afterSubmit: this.props.afterSubmit || (() => Promise.resolve()),
+    nextStep: this.props.nextStep || ""
   }
 
   handleSubmit = async (event) => {
     event.persist();
     event.preventDefault();
-    const { beforeSubmit, afterSubmit } = this.state;
+    const { beforeSubmit, afterSubmit, nextStep } = this.state;
 
     const mappedValues = mapFormValues(event.target.elements);
     await beforeSubmit(event, mappedValues);
@@ -34,25 +33,19 @@ class FormRaw extends Component {
 
     await afterSubmit();
 
-    this.setState({ submited: true })
+    this.props.navigate(`/${nextStep}`)
+
   }
 
   render() {
-    const { submited } = this.state
-    const { from } = this.props.location.state || { from: { pathname: "/" } }
-
     return (
-      submited ? (
-        <Redirect to={from}/>
-      ) : (
-        <form 
-          data-netlify="true" 
-          className={this.props.className} 
-          onChange={this.handleChange} 
-          onSubmit={this.handleSubmit}>
-          {this.props.children}
-        </form>
-      )
+      <form 
+        data-netlify="true" 
+        className={this.props.className} 
+        onChange={this.handleChange} 
+        onSubmit={this.handleSubmit}>
+        {this.props.children}
+      </form>
     );
   }
 }
