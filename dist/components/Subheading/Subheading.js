@@ -11,7 +11,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  padding: .75rem;\n  border: .0625em solid #ddd;\n  border-radius: .125em;\n  background-color: white;\n  font-size: 1em;\n\n  option {\n\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  text-align: center;\n  color: #a9a;\n  margin: 2.7em;\n  margin-top: 0.2em;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -22,6 +22,6 @@ function _templateObject() {
 
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
-var selectBase = css(_templateObject());
-var Select = styled.select(_templateObject2(), selectBase);
-export { Select };
+var SubheadingBase = css(_templateObject());
+var Subheading = styled.p(_templateObject2(), SubheadingBase);
+export { Subheading };

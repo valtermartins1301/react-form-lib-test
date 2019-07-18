@@ -1,7 +1,17 @@
 import _taggedTemplateLiteral from "@babel/runtime/helpers/esm/taggedTemplateLiteral";
 
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n  ", "\n  ", "\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  ", "\n"]);
+  var data = _taggedTemplateLiteral(["\n  color: #fff;\n  background-color: #285;\n  text-transform: uppercase;\n  font-weight: 600;\n  text-align: center;\n  width: 100%;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -11,7 +21,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  flex-direction: column;\n"]);
+  var data = _taggedTemplateLiteral(["\n  padding: .75rem;\n  border: .0625em solid #ddd;\n  border-radius: .125em;\n  font-size: 1em;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -20,27 +30,14 @@ function _templateObject() {
   return data;
 }
 
-import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 var inputBase = css(_templateObject());
 
-var inputRaw = function inputRaw(_ref) {
-  var className = _ref.className,
-      label = _ref.label,
-      type = _ref.type,
-      name = _ref.name;
-  return React.createElement("p", {
-    className: className
-  }, React.createElement("label", {
-    htmlFor: name
-  }, React.createElement("span", null, label, ":")), React.createElement("input", {
-    id: name,
-    name: name,
-    type: type,
-    itemRef: name
-  }));
+var inputSubmit = function inputSubmit(_ref) {
+  var type = _ref.type;
+  return type === 'submit' && css(_templateObject2());
 };
 
-var Input = styled(inputRaw)(_templateObject2(), inputBase);
+var Input = styled.input(_templateObject3(), inputBase, inputSubmit);
 export { Input };

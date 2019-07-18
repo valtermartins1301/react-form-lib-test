@@ -1,6 +1,7 @@
 import React from 'react';
+import { InputGroup } from '../../components/InputGroup';
+import { SelectGroup } from '../../components/SelectGroup';
 import { Input } from '../../components/Input';
-import { Select } from '../../components/Select';
 var LEAD_PURPOSE = [{
   value: '',
   text: 'Selecione um item'
@@ -25,29 +26,28 @@ var LEAD_PURPOSE = [{
 }];
 
 var ContactInformation = function ContactInformation(_ref) {
-  var history = _ref.history,
-      className = _ref.className;
-  return React.createElement("div", null, React.createElement("section", {
+  var className = _ref.className;
+  return React.createElement("div", {
     className: className
-  }, React.createElement("h2", null, "Nos conte sobre voc\xEA!!!"), React.createElement(Input, {
-    label: "Nome",
-    type: "text",
-    name: "username"
-  }), React.createElement(Input, {
+  }, React.createElement("section", null, React.createElement(InputGroup, {
+    label: "CPF",
+    type: "number",
+    name: "cpf"
+  }), React.createElement(InputGroup, {
     label: "E-mail",
     type: "email",
     name: "usermail"
-  }), React.createElement(Input, {
+  }), React.createElement(InputGroup, {
     label: "De quanto voc\xEA precisa?",
     type: "tel",
     name: "amount"
-  }), React.createElement(Select, {
+  }), React.createElement(SelectGroup, {
     label: "Como esse empr\xE9stimo vai te ajudar?",
     name: "purpose",
     options: LEAD_PURPOSE
-  })), React.createElement("input", {
+  })), React.createElement(Input, {
     type: "submit",
-    value: "Prosseguir"
+    value: "Continuar"
   }));
 };
 

@@ -18,7 +18,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n  align-self: center;\n  border-radius: 5px;\n  box-shadow: 0 10px 25px 0 rgba(136,136,153,.25);\n  border: 1px solid rgba(136,136,153,.2);\n  padding: 1.75em;\n  margin: 1.2em;\n  background: #fff;\n  section {\n    text-align: left;\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;

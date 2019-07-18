@@ -1,6 +1,7 @@
 import React from 'react';
+import { InputGroup } from '../../components/InputGroup';
+import { SelectGroup } from '../../components/SelectGroup';
 import { Input } from '../../components/Input';
-import { Select } from '../../components/Select';
 var YEARS = [{
   value: '',
   text: 'Selecione um item'
@@ -16,23 +17,22 @@ var YEARS = [{
 }];
 
 var VehicleInformation = function VehicleInformation(_ref) {
-  var history = _ref.history,
-      className = _ref.className;
-  return React.createElement("div", null, React.createElement("section", {
+  var className = _ref.className;
+  return React.createElement("div", {
     className: className
-  }, React.createElement("h2", null, "Nos conte sobre o seu ve\xEDculo"), React.createElement(Input, {
+  }, React.createElement("section", null, React.createElement(InputGroup, {
     label: "Qual \xE9 a marca e modelo?",
     type: "text",
     name: "vehicle"
-  }), React.createElement(Select, {
+  }), React.createElement(SelectGroup, {
     label: "Qual \xE9 o ano fabrica\xE7\xE3o?",
     name: "manufacturing-year",
     options: YEARS
-  }), React.createElement(Select, {
+  }), React.createElement(SelectGroup, {
     label: "Qual \xE9 o ano modelo?",
     name: "auto-year",
     options: YEARS
-  })), React.createElement("input", {
+  })), React.createElement(Input, {
     type: "submit",
     value: "Finalizar"
   }));
