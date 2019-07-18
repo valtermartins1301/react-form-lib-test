@@ -26,7 +26,7 @@ import { css } from '@emotion/core';
 import { Form } from "../../components/Form";
 import { Heading } from "../../components/Heading";
 import { Subheading } from "../../components/Subheading";
-import { ReactComponent as Logo } from '../../../images/logo.svg';
+import { ReactComponent as Logo } from '../../images/logo.svg';
 import { Intro } from './Intro';
 var introBase = css(_templateObject());
 
