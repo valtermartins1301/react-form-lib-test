@@ -2,8 +2,8 @@ import styled from '@emotion/styled'
 import {css} from '@emotion/core'
 
 const inputBase = css`
-  padding: .75rem;
-  border: .0625em solid #ddd;
+  padding: 0.75rem;
+  border: 0.0625em solid #ddd;
   border-radius: .125em;
   font-size: 1em;
 `;

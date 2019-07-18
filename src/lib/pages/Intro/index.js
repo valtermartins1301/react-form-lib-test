@@ -31,5 +31,10 @@ const introRaw = (props) => {
 const IntroForm = styled(introRaw)`
   ${introBase}
 `
+const firstPage = (props) => {
+  return (
+    <IntroForm></IntroForm>
+  )
+}
 
-export default IntroForm;
+export default firstPage;

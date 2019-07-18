@@ -39,4 +39,9 @@ var introRaw = function introRaw(props) {
 };
 
 var IntroForm = styled(introRaw)(_templateObject2(), introBase);
-export default IntroForm;
+
+var firstPage = function firstPage(props) {
+  return React.createElement(IntroForm, null);
+};
+
+export default firstPage;

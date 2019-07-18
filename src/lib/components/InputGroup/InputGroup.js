@@ -10,7 +10,7 @@ const inputBase = css`
   flex-direction: column;
 `;
 
-const inputRaw = ({className, label, type, name, placeholder}) => {
+const inputRaw = ({className, label, type='', name, placeholder}) => {
   return (
      <p className={className}>
       <Label htmlFor={name} label={label}/>

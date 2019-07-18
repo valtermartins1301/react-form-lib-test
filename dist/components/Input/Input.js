@@ -21,7 +21,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  padding: .75rem;\n  border: .0625em solid #ddd;\n  border-radius: .125em;\n  font-size: 1em;\n"]);
+  var data = _taggedTemplateLiteral(["\n  padding: 0.75rem;\n  border: 0.0625em solid #ddd;\n  border-radius: .125em;\n  font-size: 1em;\n"]);
 
   _templateObject = function _templateObject() {
     return data;

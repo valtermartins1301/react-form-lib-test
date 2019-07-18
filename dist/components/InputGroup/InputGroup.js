@@ -30,7 +30,8 @@ var inputBase = css(_templateObject());
 var inputRaw = function inputRaw(_ref) {
   var className = _ref.className,
       label = _ref.label,
-      type = _ref.type,
+      _ref$type = _ref.type,
+      type = _ref$type === void 0 ? '' : _ref$type,
       name = _ref.name,
       placeholder = _ref.placeholder;
   return React.createElement("p", {
