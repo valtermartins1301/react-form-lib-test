@@ -51,8 +51,16 @@ class FormRaw extends Component {
 }
 
 const baseForm = css`
-  display: flex;
-  justify-content: center;
+  align-self: center;
+  border-radius: 5px;
+  box-shadow: 0 10px 25px 0 rgba(136,136,153,.25);
+  border: 1px solid rgba(136,136,153,.2);
+  padding: 1.75em;
+  margin: 1.2em;
+  background: #fff;
+  section {
+    text-align: left;
+  }
 `;
 
 const Form = styled(FormRaw)`

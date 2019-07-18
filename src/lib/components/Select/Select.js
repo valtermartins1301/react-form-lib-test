@@ -1,32 +1,18 @@
-import React from 'react';
 import styled from '@emotion/styled'
 import {css} from '@emotion/core'
 
 const selectBase = css`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-`
-const selectRaw = ({className, label, name, options}) => {
-  return (
-    <p className={className}>
-      <label htmlFor={name}>
-        <span>{label}</span>
-      </label>
-      <select id={name} name={name}>  
-        {options.map(({value, text}, index) => {
-          return (
-            <option key={index} value={value}>
-              {text}
-            </option>
-          )
-        })}
-      </select>
-    </p>
-  )
-}
+  padding: .75rem;
+  border: .0625em solid #ddd;
+  border-radius: .125em;
+  background-color: white;
+  font-size: 1em;
 
-const Select = styled(selectRaw)`
+  option {
+
+  }
+`
+const Select = styled.select`
   ${selectBase}
 `
 

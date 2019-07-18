@@ -1,6 +1,7 @@
 import React from 'react';
-import { Input } from '../../components/Input';
-import { Select } from '../../components/Select';
+import { InputGroup } from '../../components/InputGroup';
+import { SelectGroup } from '../../components/SelectGroup';
+import {Input} from '../../components/Input';
 
 const YEARS = [{
   value: '',
@@ -19,16 +20,15 @@ const YEARS = [{
   text: '2017'
 }]
 
-const VehicleInformation = ({history, className}) => {
+const VehicleInformation = ({className}) => {
   return (
-    <div>
-      <section className={className}>
-        <h2>Nos conte sobre o seu veículo</h2>
-        <Input label="Qual é a marca e modelo?" type="text" name="vehicle"/>
-        <Select label="Qual é o ano fabricação?" name="manufacturing-year" options={YEARS}/>
-        <Select label="Qual é o ano modelo?" name="auto-year" options={YEARS}/>
+    <div className={className}>
+      <section>
+        <InputGroup label="Qual é a marca e modelo?" type="text" name="vehicle"/>
+        <SelectGroup label="Qual é o ano fabricação?" name="manufacturing-year" options={YEARS}/>
+        <SelectGroup label="Qual é o ano modelo?" name="auto-year" options={YEARS}/>
       </section>
-      <input type="submit" value="Finalizar"/>
+      <Input type="submit" value="Finalizar"/>
     </div>
   )
 }

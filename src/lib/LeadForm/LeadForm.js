@@ -6,12 +6,16 @@ import {
   Router,
 } from "@reach/router"
 import loadable from '@loadable/component'
-import LoadableContact from '../pages/ContactInformation'
+import Intro from '../pages/Intro'
 
 const source = createMemorySource("/")
 const history = createHistory(source)
 
 const Loading = () => <p>Loading...</p>
+
+const LoadableContact = loadable(() => import('../pages/ContactInformation'), {
+  fallback: <Loading/>,
+})
 
 const LoadableVehicle = loadable(() => import('../pages/VehicleInformation'), {
   fallback: <Loading/>,
@@ -21,7 +25,8 @@ const LeadForm = (props) => {
   return (
     <LocationProvider history={history}>
       <Router>
-        <LoadableContact path="/" {...props}/>
+        <Intro path="/" {...props}/>
+        <LoadableContact path="/contact" {...props}/>
         <LoadableVehicle path="/vehicle" {...props}/>
       </Router>
     </LocationProvider>

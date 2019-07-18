@@ -1,6 +1,7 @@
 import React from 'react';
-import { Input } from '../../components/Input';
-import { Select } from '../../components/Select';
+import { InputGroup } from '../../components/InputGroup';
+import { SelectGroup } from '../../components/SelectGroup';
+import {Input} from '../../components/Input';
 
 const LEAD_PURPOSE = [{
   value: '',
@@ -31,17 +32,16 @@ const LEAD_PURPOSE = [{
   text: 'Outros'
 }]
 
-const ContactInformation = ({history, className}) => {
+const ContactInformation = ({className}) => {
   return (
-    <div>
-      <section className={className}>
-        <h2>Nos conte sobre você!!!</h2>
-        <Input label="Nome" type="text" name="username"/>
-        <Input label="E-mail" type="email" name="usermail"/>
-        <Input label="De quanto você precisa?" type="tel" name="amount"/>
-        <Select label="Como esse empréstimo vai te ajudar?" name="purpose" options={LEAD_PURPOSE}/>
+    <div className={className}>
+      <section>
+        <InputGroup label="CPF" type="number" name="cpf"/>
+        <InputGroup label="E-mail" type="email" name="usermail"/>
+        <InputGroup label="De quanto você precisa?" type="tel" name="amount"/>
+        <SelectGroup label="Como esse empréstimo vai te ajudar?" name="purpose" options={LEAD_PURPOSE}/>
       </section>
-      <input type="submit" value="Prosseguir"/>
+      <Input type="submit" value="Continuar"/>
     </div>
   )
 }

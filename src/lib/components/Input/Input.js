@@ -1,31 +1,28 @@
-import React from 'react';
 import styled from '@emotion/styled'
 import {css} from '@emotion/core'
 
 const inputBase = css`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+  padding: .75rem;
+  border: .0625em solid #ddd;
+  border-radius: .125em;
+  font-size: 1em;
 `;
 
-const inputRaw = ({className, label, type, name}) => {
-  return (
-     <p className={className}>
-      <label htmlFor={name}>
-        <span>{label}:</span>
-      </label>
-      <input 
-        id={name} 
-        name={name} 
-        type={type}
-        itemRef={name}
-      />
-    </p>
-  )
-}
+const inputSubmit = ({type}) =>
+type === 'submit' &&
+css`
+  color: #fff;
+  background-color: #285;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+`;
 
-const Input = styled(inputRaw)`
+
+const Input = styled.input`
   ${inputBase}
+  ${inputSubmit}
 `
 
 export { Input }
