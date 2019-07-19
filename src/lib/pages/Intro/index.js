@@ -4,13 +4,13 @@ import {css} from '@emotion/core'
 import { Form } from "../../components/Form"
 import { Heading } from "../../components/Heading"
 import {Subheading} from "../../components/Subheading"
-import { ReactComponent as Logo } from '../../images/logo.svg';
+import logo from '../../images/logo.svg';
 import {Intro} from './Intro'
 
 const introBase = css`
   text-align: center;
 
-  svg {
+  img {
     height: 5em;
   }
 `
@@ -18,7 +18,7 @@ const introBase = css`
 const introRaw = (props) => {
   return (
     <div className={props.className}>
-      <Logo/>
+      <img src={logo} alt="Logo" />
       <Heading>Queremos conhecer você</Heading>
       <Subheading>Vamos encontrar o empréstimo ideal para o seu momento</Subheading>
       <Form nextStep="contact" {...props}>
@@ -31,10 +31,5 @@ const introRaw = (props) => {
 const IntroForm = styled(introRaw)`
   ${introBase}
 `
-const firstPage = (props) => {
-  return (
-    <IntroForm></IntroForm>
-  )
-}
 
-export default firstPage;
+export default IntroForm;
